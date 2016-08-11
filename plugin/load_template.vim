@@ -186,8 +186,8 @@ function s:LoadFile(path) "{{{
 		silent execute "setf ".preFileType
 	endif
 
-	"指定光标位置
-	silent! call search(s:template_cursor)
+	"指定光标位置，{flag}:'w'为从当前光标处搜索至尾部并回绕搜索。
+	silent! call search(s:template_cursor, 'w')
 	let w = expand("<cword>")
 	if w == s:template_cursor 
 		silent normal diw
