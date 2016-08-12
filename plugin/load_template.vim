@@ -56,7 +56,7 @@ let s:template_cursor = 'TEMPLATE_CURSOR'
 "}}}
 
 "对外的主函数
-function LoadTemplate(...) "{{{
+function! LoadTemplate(...) "{{{
 	let type = (a:0 ? a:1 : '')
 
 	"获取扩展名或者类型名{{{
@@ -127,7 +127,7 @@ endfunction
 "}}}
 
 "加载list
-function s:AddTemplateFile(list,path,filter) "{{{
+function! s:AddTemplateFile(list,path,filter) "{{{
 	let filesStr = globpath(a:path, a:filter)
 	let files = split(filesStr, "\n")
 	for i in files
@@ -142,7 +142,7 @@ endfunction
 "}}}
 
 "加载模板文件
-function s:LoadFile(path) "{{{
+function! s:LoadFile(path) "{{{
 	let preFileType = &filetype
 	let line = getline('.')
 	if(line =~ '^\s*$')
@@ -197,7 +197,7 @@ endfunction
 "}}}
 
 "自动执行最后的脚本
-function s:ExeAferLoad() "{{{
+function! s:ExeAferLoad() "{{{
 	let exeList = []
 
 	let i = 1
